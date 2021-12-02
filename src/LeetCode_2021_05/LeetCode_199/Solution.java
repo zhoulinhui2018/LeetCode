@@ -31,6 +31,8 @@ public class Solution {
             levelList.add(temp);
         }
 
+
+
         for (ArrayList<Integer> list : levelList) {
             ans.add(list.get(list.size() - 1));
         }
