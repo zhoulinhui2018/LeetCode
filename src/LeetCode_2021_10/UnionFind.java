@@ -45,13 +45,17 @@ public class UnionFind {
         return rootP == rootQ;
     }
 
+//    private int find(int x) {
+//        while (parent[x] != x) {
+//            // 进行路径压缩
+//            parent[x] = parent[parent[x]];
+//            x = parent[x];
+//        }
+//        return x;
+//    }
+
     private int find(int x) {
-        while (parent[x] != x) {
-            // 进行路径压缩
-            parent[x] = parent[parent[x]];
-            x = parent[x];
-        }
-        return x;
+        return x == parent[x] ? x : (parent[x] = find(parent[x]));
     }
 
     public int minCostConnectPoints(int[][] points) {
@@ -101,9 +105,6 @@ public class UnionFind {
         return res;
 
     }
-
-
-
 
 
 }
